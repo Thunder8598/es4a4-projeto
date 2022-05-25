@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::table("topicos")->insert([
+            "titulo"=>"aaaa",
+            "permalink"=>"aaaa"
+        ]);
+
         // $this->call(UserSeeder::class);
     }
 }
