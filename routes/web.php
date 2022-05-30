@@ -15,5 +15,4 @@ use App\Models\Topico;
 */
 
 Route::get('/', function () {
-    return Topico::get();
 });
