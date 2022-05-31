@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Topico;
+use App\Http\Controllers\TopicoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +14,4 @@ use App\Models\Topico;
 |
 */
 
-Route::get('/', function () {
-});
+Route::post("/topicos",[TopicoController::class,"criar"]);
