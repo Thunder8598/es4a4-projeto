@@ -15,3 +15,4 @@ use App\Http\Controllers\TopicoController;
 */
 
 Route::post("/topicos",[TopicoController::class,"criar"]);
+Route::get("/topicos",[TopicoController::class,"recuperar"]);

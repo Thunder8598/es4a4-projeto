@@ -19,9 +19,20 @@ class TopicoController extends Controller
 
             return response()->json($topico);
         } catch (Exception $e) {
-            Log::error("TopicoController::criar - Erro na requisição",["erro"=>$e]);
+            Log::error("TopicoController::criar - Erro na requisição", ["erro" => $e]);
 
             return redirect("/");
+        }
+    }
+
+    public function recuperar(Request $resquest,string $permalink)
+    {
+        try {
+            //return Topico::listarTopicos();
+        } catch (Exception $e) {
+            Log::error("TopicoController::recuperar - Erro na requisição", ["erro" => $e]);
+
+            return abort(500, "Oops, algo deu errado. Tente mais tarde.");
         }
     }
 }
