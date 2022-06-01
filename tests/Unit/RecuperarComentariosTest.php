@@ -4,16 +4,16 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class BuscarTopicoTest extends TestCase
+class RecuperarComentariosTest extends TestCase
 {
     /**
      * A basic unit test example.
      *
      * @return void
      */
-    public function testBuscaTopico()
+    public function testRecuperarComentarios()
     {
-        $response = $this->get("/topicos?busca=teste");
+        $response = $this->get("/comentarios?page=1");
         $response->assertStatus(200);
     }
 }
