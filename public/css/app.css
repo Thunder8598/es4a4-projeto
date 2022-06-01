@@ -12173,3 +12173,12 @@ fieldset:disabled .btn {
   }
 }
 
+.btn-outline-success {
+  color: #198754;
+  border-color: #198754;
+}
+
+body {
+  background-color: #dadada;
+}
+

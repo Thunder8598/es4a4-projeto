@@ -27699,8 +27699,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\ARQUIVOS DOS ALUNOS\MarcosQ\ES4A4\es4a4-projeto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\ARQUIVOS DOS ALUNOS\MarcosQ\ES4A4\es4a4-projeto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\ARQUIVOS DOS ALUNOS\Polezel\git\es4a4-projeto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\ARQUIVOS DOS ALUNOS\Polezel\git\es4a4-projeto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
