@@ -18,18 +18,18 @@ class Topico extends Model
         $titulo = preg_replace("/\s+/", "-", $titulo);
         $titulo = strtolower($titulo);
 
-        $this->permalink = $titulo;
+        $this->permalink = utf8_encode($titulo);
     }
 
-    public function listarTopicos(int $pagina = 1, string $busca = null)
+    public static function listarTopicos(int $pagina = 1, string $busca = null)
     {
         if (!empty($busca)) {
-            return parent::where("titulo", "like", "{$busca}%")
-                ->offset($pagina > 0 ? ($pagina * 10) - 1 : 10)
+            return parent::where("titulo", "like", "%{$busca}%")
+                ->offset($pagina > 0 ? ($pagina * 10) : 10)
                 ->simplePaginate(10);
         }
 
-        return parent::offset($pagina > 0 ? ($pagina * 10) - 1 : 10)
+        return parent::offset($pagina > 0 ? ($pagina * 10) : 10)
             ->simplePaginate(10);
     }
 }

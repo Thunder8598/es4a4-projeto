@@ -15,7 +15,7 @@ class CriarTopicoTest extends TestCase
     public function testCriarTopico()
     {
 
-        $response = $this->post("/topicos", ["topico" => "Teste de topico"]);
+        $response = $this->post("/topicos", ["topico" => "Teste de tópico"]);
         $response->assertStatus(200);
     }
 }
