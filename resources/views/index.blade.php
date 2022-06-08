@@ -6,49 +6,62 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Comente Sobre</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body class="bg-fireOpal">
 
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Ação</a>
-                    <a class="dropdown-item" href="#">Outra ação</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Algo mais aqui</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Desativado</a>
-                </li>
-            </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-        </form>
-    </div>
-    </nav>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-charcoal">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">
+                    <img src="{{ asset('images/logo.png') }}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Comente Sobre
+                </a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Busca de tópicos" aria-label="buscar">
+                    <button class="btn text-white bg-englishViolet" type="submit">buscar</button>
+                </form>
+            </div>
+        </nav>
     </header>
 
-    
+    <!-- FORMULÁRIO PARA CRIAÇÃO DE NOVO TÓPICO -->
+    <div class="bg-charcoal mt-5 py-5 w-75 mx-auto rounded">
+        
+        <form class="d-grid gap-3 w-75 mx-auto">
+
+            <input class="form-control" type="text" placeholder="Nome do Tópico" aria-label="Nome do Tópico">
+
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-dark text-white" type="submit">Cancelar</button>
+                <button class="btn text-white bg-englishViolet" type="submit">Criar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- LISTAGEM DOS TÓPICOS EXISTENTES -->
+    <div class="bg-charcoal mt-5 py-5 w-75 mx-auto rounded">
+        
+        <form class="d-grid gap-3 w-75 mx-auto">
+
+            <ul class="list-group gap-3">
+                <li class="list-group-item bg-white">Tópico recente</li>
+                <li class="list-group-item bg-white">Tópico recente</li>
+                <li class="list-group-item bg-white">Tópico recente</li>
+                <li class="list-group-item bg-white">Tópico recente</li>
+                <li class="list-group-item bg-white">Tópico recente</li>
+            </ul>
+
+            <div class="d-flex justify-content-around">
+                <button class="btn text-white bg-englishViolet" type="submit">Ver Mais</button>
+            </div>
+        </form>
+    </div>
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 

@@ -1,1 +1,1 @@
-console.log("Olá mundo");
+import 'bootstrap/dist/js/bootstrap.js';
