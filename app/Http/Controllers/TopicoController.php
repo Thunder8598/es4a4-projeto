@@ -9,6 +9,23 @@ use Illuminate\Support\Facades\Log;
 
 class TopicoController extends Controller
 {
+
+    public function index(Request $request, string $permalink = null)
+    {
+        try {
+            $response = Topico::topicoPorPermalink($permalink);
+
+            if (empty($response))
+                return abort(404, "Tópico não encontrado");
+
+            return response()->json($response);
+        } catch (Exception $e) {
+            Log::error("TopicoController::index - Erro na requisição", ["erro" => $e]);
+
+            return abort(500, "Oops! Tente novamente mais tarde.");
+        }
+    }
+
     public function criar(Request $resquest)
     {
         try {
@@ -25,7 +42,7 @@ class TopicoController extends Controller
         }
     }
 
-    public function recuperar(Request $resquest, string $permalink = null)
+    public function recuperar(Request $resquest)
     {
         $busca = $resquest->get("busca");
         $pagina = (int) $resquest->get("page");
@@ -48,6 +65,28 @@ class TopicoController extends Controller
             ]);
         } catch (Exception $e) {
             Log::error("TopicoController::recuperar - Erro na requisição", ["erro" => $e]);
+
+            return response()->json([
+                "status" => "erro"
+            ], 500);
+        }
+    }
+
+    public function visualizar(Request $request, string $permalink = null)
+    {
+        try {
+            $response = Topico::topicoPorPermalink($permalink);
+
+            if (empty($response)) {
+                return response()->json([
+                    "status" => "erro",
+                    "mensagem" => "Nenhum tópico encontrado"
+                ], 404);
+            }
+
+            return response()->json($response);
+        } catch (Exception $e) {
+            Log::error("TopicoController::visualizar - Erro na requisição", ["erro" => $e]);
 
             return response()->json([
                 "status" => "erro"

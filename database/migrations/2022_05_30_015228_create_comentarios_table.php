@@ -17,6 +17,7 @@ class CreateComentariosTable extends Migration
             $table->id();
             $table->string("email", 100);
             $table->text("comentario", 400);
+            $table->bigInteger("topico");
             $table->timestamps();
         });
     }

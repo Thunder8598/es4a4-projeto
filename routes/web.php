@@ -14,5 +14,7 @@ use App\Http\Controllers\TopicoController;
 |
 */
 
-Route::post("/topicos",[TopicoController::class,"criar"]);
-Route::get("/topicos",[TopicoController::class,"recuperar"]);
+Route::get("/topicos/{permalink}", [TopicoController::class, "index"]);
+Route::post("/topicos", [TopicoController::class, "criar"]);
+Route::get("/topicos", [TopicoController::class, "recuperar"]);
+Route::get("/comente-sobre/{permalink}", [TopicoController::class, "visualizar"]);

@@ -32,4 +32,9 @@ class Topico extends Model
         return parent::offset($pagina > 0 ? ($pagina * 10) : 10)
             ->simplePaginate(10);
     }
+
+    public static function topicoPorPermalink(string $permalink)
+    {
+        return parent::where("permalink", "like", $permalink)->first();
+    }
 }
