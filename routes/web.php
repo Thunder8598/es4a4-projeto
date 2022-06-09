@@ -13,6 +13,13 @@ use App\Http\Controllers\TopicoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get("/",function(){
+    return redirect("/comente-sobre");
+});
+
+Route::get("/comente-sobre",function(){
+    return view("index");
+});
 
 Route::get("/topicos/{permalink}", [TopicoController::class, "index"]);
 Route::post("/topicos", [TopicoController::class, "criar"]);

@@ -31,14 +31,14 @@ class TopicoController extends Controller
         try {
             $topico = new Topico();
 
-            $topico->setTitulo($resquest->get("topico"));
+            $topico->setTitulo($resquest->input("topico"));
             $topico->save();
 
-            return response()->json($topico);
+            return redirect("/comente-sobre/{$topico->permalink}");
         } catch (Exception $e) {
             Log::error("TopicoController::criar - Erro na requisição", ["erro" => $e]);
 
-            return redirect("/");
+            return redirect("/comente-sobre");
         }
     }
 
