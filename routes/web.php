@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopicoController;
 
@@ -25,3 +26,5 @@ Route::get("/topicos/{permalink}", [TopicoController::class, "index"]);
 Route::post("/topicos", [TopicoController::class, "criar"]);
 Route::get("/topicos", [TopicoController::class, "recuperar"]);
 Route::get("/comente-sobre/{permalink}", [TopicoController::class, "visualizar"]);
+
+Route::post("/comentarios", [ComentarioController::class, "criar"]);

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
 </head>
 
-<body class="bg-fireOpal">
+<body class="bg-fireOpal @yield('page-classname')">
     @include('components.navbar')
 
     @yield('main')

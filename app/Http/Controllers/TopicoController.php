@@ -77,20 +77,14 @@ class TopicoController extends Controller
         try {
             $response = Topico::topicoPorPermalink($permalink);
 
-            if (empty($response)) {
-                return response()->json([
-                    "status" => "erro",
-                    "mensagem" => "Nenhum tópico encontrado"
-                ], 404);
-            }
+            if (empty($response))
+                return response(view("not-found"), 404);
 
-            return response()->json($response);
+            return view("topico", ["topico" => $response]);
         } catch (Exception $e) {
             Log::error("TopicoController::visualizar - Erro na requisição", ["erro" => $e]);
 
-            return response()->json([
-                "status" => "erro"
-            ], 500);
+            return abort(500, "Oops! Tente mais tarde.");
         }
     }
 }

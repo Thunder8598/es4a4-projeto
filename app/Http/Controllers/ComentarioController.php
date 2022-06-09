@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Comentario;
-use App\Models\Topico;
+use App\Models\Comentario;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -28,7 +27,7 @@ class ComentarioController extends Controller
         }
     }
 
-    public function recuperar(Request $resquest)
+    /* public function recuperar(Request $resquest)
     {
         $busca = $resquest->get("busca");
         $pagina = (int) $resquest->get("page");
@@ -78,5 +77,5 @@ class ComentarioController extends Controller
                 "status" => "erro"
             ], 500);
         }
-    }
+    } */
 }
