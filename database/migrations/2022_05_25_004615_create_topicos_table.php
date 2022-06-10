@@ -15,8 +15,8 @@ class CreateTopicosTable extends Migration
     {
         Schema::create('topicos', function (Blueprint $table) {
             $table->id();
-            $table->char("titulo",255);
-            $table->char("permalink",255);
+            $table->char("titulo", 255);
+            $table->char("permalink", 255)->unique();
             $table->timestamps();
         });
     }

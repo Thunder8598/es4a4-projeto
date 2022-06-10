@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Topico;
 use Exception;
+use PDOException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -32,7 +33,11 @@ class TopicoController extends Controller
             $topico = new Topico();
 
             $topico->setTitulo($resquest->input("topico"));
-            $topico->save();
+
+            $response = Topico::topicoPorPermalink($topico->permalink);
+
+            if (empty($response))
+                $topico->save();
 
             return redirect("/comente-sobre/{$topico->permalink}");
         } catch (Exception $e) {

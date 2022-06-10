@@ -25,7 +25,7 @@
         <ul class="list-group gap-3" id="lista-topicos"></ul>
 
         <div class="d-flex justify-content-around">
-            <button class="btn text-white bg-englishViolet" id="btn-carregar-topicos" type="button">Ver Mais</button>
+            <button class="btn text-white bg-englishViolet" id="btn-carregar-topicos" type="button" style="display:none">Ver Mais</button>
         </div>
     </form>
 </div>

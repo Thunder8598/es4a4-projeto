@@ -6,7 +6,7 @@ class Home {
     constructor() {
         this.next_page_url = `${location.origin}/topicos`;
         this.btnCarregar = $("#btn-carregar-topicos");
-        
+
         this.onClickBtnCarregarTopicos();
     }
 
@@ -24,6 +24,8 @@ class Home {
 
             if (!this.next_page_url)
                 this.btnCarregar.hide();
+            else
+                this.btnCarregar.show();
 
         } catch (error) {
             console.log(error);
@@ -31,7 +33,11 @@ class Home {
     }
 
     onClickBtnCarregarTopicos = () => {
-        this.btnCarregar.on("click", this.listarTopicos);
+        this.btnCarregar.on("click", async () => {
+            this.btnCarregar.attr("disabled", "disabled");
+            await this.listarTopicos();
+            this.btnCarregar.removeAttr("disabled");
+        });
     }
 }
 

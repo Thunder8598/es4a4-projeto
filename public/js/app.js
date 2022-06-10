@@ -38766,7 +38766,7 @@ var Home = /*#__PURE__*/_createClass(function Home() {
                   titulo = _ref2.titulo;
               listaTopicos.append("<li class=\"list-group-item bg-white\"><a href=\"/comente-sobre/".concat(permalink, "\">").concat(titulo, "</a></li>"));
             });
-            if (!_this.next_page_url) _this.btnCarregar.hide();
+            if (!_this.next_page_url) _this.btnCarregar.hide();else _this.btnCarregar.show();
             _context.next = 15;
             break;
 
@@ -38784,7 +38784,26 @@ var Home = /*#__PURE__*/_createClass(function Home() {
   })));
 
   _defineProperty(this, "onClickBtnCarregarTopicos", function () {
-    _this.btnCarregar.on("click", _this.listarTopicos);
+    _this.btnCarregar.on("click", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _this.btnCarregar.attr("disabled", "disabled");
+
+              _context2.next = 3;
+              return _this.listarTopicos();
+
+            case 3:
+              _this.btnCarregar.removeAttr("disabled");
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
   });
 
   this.next_page_url = "".concat(location.origin, "/topicos");
