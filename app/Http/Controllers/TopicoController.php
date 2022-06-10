@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TopicoPostRequest;
 use App\Models\Topico;
 use Exception;
 use PDOException;
@@ -27,7 +28,7 @@ class TopicoController extends Controller
         }
     }
 
-    public function criar(Request $resquest)
+    public function criar(TopicoPostRequest $resquest)
     {
         try {
             $topico = new Topico();
