@@ -6,11 +6,12 @@ use App\Models\Comentario;
 use App\Models\Topico;
 use Exception;
 use Illuminate\Http\Request;
+use App\Http\Requests\ComentarioPostRequest;
 use Illuminate\Support\Facades\Log;
 
 class ComentarioController extends Controller
 {
-    public function criar(Request $request)
+    public function criar(ComentarioPostRequest $request)
     {
         try {
             $topico = Topico::topicoPorPermalink($request->input("permalink"));

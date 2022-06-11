@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TopicoPostRequest extends FormRequest
+class ComentarioPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,18 @@ class TopicoPostRequest extends FormRequest
     public function rules()
     {
         return [
-            "topico" => "required|max:255"
+            "email" => "required|max:255",
+            "comentario" => "required|max:255"
         ];
     }
 
     public function messages()
     {
         return [
-            "topico.required" => "Campo tópico está vazio.",
-            "topico.max" => "Campo tópico tem tamanho máximo de 255 caracteres.",
+            "email.required" => "Campo e-mail está vazio.",
+            "email.max" => "Campo e-mail tem tamanho máximo de 255 caracteres.",
+            "comentario.required" => "Campo comentário está vazio.",
+            "comentario.max" => "Campo comentário tem tamanho máximo de 255 caracteres.",
         ];
     }
 }
