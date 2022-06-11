@@ -11,5 +11,9 @@ if (classList.contains("pagina-inicial")) {
     home.listarTopicos();
 }
 
-else if (classList.contains("pagina-topicos"))
-    new Topico().enviarComentario();
+else if (classList.contains("pagina-topicos")) {
+    const topico = new Topico();
+
+    topico.enviarComentario();
+    topico.listarComentarios();
+}

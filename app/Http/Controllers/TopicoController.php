@@ -44,7 +44,7 @@ class TopicoController extends Controller
         } catch (Exception $e) {
             Log::error("TopicoController::criar - Erro na requisição", ["erro" => $e]);
 
-            return redirect("/comente-sobre");
+            return response(view("exception"), 500);
         }
     }
 

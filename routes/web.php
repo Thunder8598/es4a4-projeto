@@ -28,3 +28,4 @@ Route::get("/topicos", [TopicoController::class, "recuperar"]);
 Route::get("/comente-sobre/{permalink}", [TopicoController::class, "visualizar"]);
 
 Route::post("/comentarios", [ComentarioController::class, "criar"]);
+Route::get("/comentarios", [ComentarioController::class, "recuperar"]);
