@@ -32,6 +32,13 @@ class Topico {
                 `);
             } catch (error) {
                 console.error(error);
+
+                form.find(".alert.alert-danger").show().html("");
+
+                const { errors } = (await error.json());
+
+                for (const err in errors)
+                    form.find(".alert.alert-danger").append(`<div>${errors[err]}</div>`)
             }
         });
     }

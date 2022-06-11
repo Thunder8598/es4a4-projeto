@@ -13,8 +13,12 @@
     <form class="d-grid gap-3 w-75 mx-auto" id="form-comentario">
         @csrf
 
-        <input class="form-control" name="email" type="text" placeholder="Nome do Tópico" aria-label="Nome do Tópico">
-        <textarea class="form-control" name="comentario" placeholder="Comentário" rows="3"></textarea>
+        <div class="alert alert-danger" style="display: none"></div>
+
+        <input class="form-control" name="email" type="text" placeholder="Nome do Tópico" aria-label="Nome do Tópico"
+            required maxlength="255">
+        <textarea class="form-control" name="comentario" placeholder="Comentário" rows="3" required
+            maxlength="255"></textarea>
 
         <div class="d-flex justify-content-around">
             <button class="btn text-white bg-englishViolet" type="submit">Comentar</button>
@@ -31,7 +35,8 @@
         <ul class="list-group gap-3" id="listagem-comentarios"></ul>
 
         <div class="d-flex justify-content-around">
-            <button class="btn text-white bg-englishViolet" id="btn-carregar-comentarios" type="submit">Ver Mais</button>
+            <button class="btn text-white bg-englishViolet" id="btn-carregar-comentarios" type="submit">Ver
+                Mais</button>
         </div>
     </div>
 </div>
