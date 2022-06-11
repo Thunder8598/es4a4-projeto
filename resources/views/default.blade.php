@@ -7,7 +7,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Comente Sobre</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
 </head>
 
 <body class="bg-fireOpal @yield('page-classname')">

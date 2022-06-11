@@ -12173,3 +12173,22 @@ fieldset:disabled .btn {
   }
 }
 
+.bg-fireOpal {
+  background-image: linear-gradient(#eb5e55, #3a4454);
+  height: 100vh;
+}
+
+.bg-charcoal {
+  background-color: #3a4454;
+}
+
+.bg-englishViolet {
+  background-color: #6b4e71;
+}
+
+.pagina-topicos h1,
+.pagina-topicos .h1 {
+  text-align: center;
+  color: white;
+}
+

@@ -16,11 +16,9 @@
             @endforeach
         </div>
         @endif
-
-        <input class="form-control" name="topico" type="text" placeholder="Nome do Tópico" aria-label="Nome do Tópico" required>
-
+        
         <div class="d-flex justify-content-around">
-            <button class="btn btn-dark text-white" type="submit">Cancelar</button>
+            <input class="form-control" name="topico" type="text" placeholder="Nome do Tópico" aria-label="Nome do Tópico" required>
             <button class="btn text-white bg-englishViolet" type="submit">Criar</button>
         </div>
     </form>

@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-charcoal">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">
+            <a class="navbar-brand text-white" href="/">
                 <img src="{{ asset('images/logo.png') }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
                 Comente Sobre
