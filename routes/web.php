@@ -14,18 +14,19 @@ use App\Http\Controllers\TopicoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/",function(){
+
+Route::get("/", function () {
     return redirect("/comente-sobre");
 });
 
-Route::get("/comente-sobre",function(){
+Route::get("/comente-sobre", function () {
     return view("index");
 });
 
-Route::get("/topicos/{permalink}", [TopicoController::class, "index"]);
+Route::get("/comente-sobre/{permalink}", [TopicoController::class, "index"]);
+
 Route::post("/topicos", [TopicoController::class, "criar"]);
 Route::get("/topicos", [TopicoController::class, "recuperar"]);
-Route::get("/comente-sobre/{permalink}", [TopicoController::class, "visualizar"]);
 
 Route::post("/comentarios", [ComentarioController::class, "criar"]);
 Route::get("/comentarios", [ComentarioController::class, "recuperar"]);

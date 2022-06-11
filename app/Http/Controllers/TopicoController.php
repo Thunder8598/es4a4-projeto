@@ -18,16 +18,15 @@ class TopicoController extends Controller
             $response = Topico::topicoPorPermalink($permalink);
 
             if (empty($response))
-                return abort(404, "Tópico não encontrado");
+                return response(view("not-found"), 404);
 
-            return response()->json($response);
+            return view("topico", ["topico" => $response]);
         } catch (Exception $e) {
-            Log::error("TopicoController::index - Erro na requisição", ["erro" => $e]);
+            Log::error("TopicoController::visualizar - Erro na requisição", ["erro" => $e]);
 
-            return abort(500, "Oops! Tente novamente mais tarde.");
+            return abort(500, "Oops! Tente mais tarde.");
         }
     }
-
     public function criar(TopicoPostRequest $resquest)
     {
         try {
@@ -75,22 +74,6 @@ class TopicoController extends Controller
             return response()->json([
                 "status" => "erro"
             ], 500);
-        }
-    }
-
-    public function visualizar(Request $request, string $permalink = null)
-    {
-        try {
-            $response = Topico::topicoPorPermalink($permalink);
-
-            if (empty($response))
-                return response(view("not-found"), 404);
-
-            return view("topico", ["topico" => $response]);
-        } catch (Exception $e) {
-            Log::error("TopicoController::visualizar - Erro na requisição", ["erro" => $e]);
-
-            return abort(500, "Oops! Tente mais tarde.");
         }
     }
 }
