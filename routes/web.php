@@ -23,6 +23,10 @@ Route::get("/comente-sobre", function () {
     return view("index");
 });
 
+Route::get("/buscar",function(){
+    return view("busca");
+});
+
 Route::get("/comente-sobre/{permalink}", [TopicoController::class, "index"]);
 
 Route::post("/topicos", [TopicoController::class, "criar"]);

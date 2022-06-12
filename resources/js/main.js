@@ -2,6 +2,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 import Home from './home/Home';
 import Topico from './topico/Topico';
+import Busca from './busca/Busca';
 
 const { classList } = document.body;
 
@@ -16,4 +17,10 @@ else if (classList.contains("pagina-topicos")) {
 
     topico.enviarComentario();
     topico.listarComentarios();
+}
+
+else if (classList.contains("pagina-busca")) {
+    const busca = new Busca();
+
+    busca.listarTopicos();
 }

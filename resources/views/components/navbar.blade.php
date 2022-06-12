@@ -6,8 +6,8 @@
                     class="d-inline-block align-text-top">
                 Comente Sobre
             </a>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Busca de tópicos" aria-label="buscar">
+            <form class="d-flex" action="/buscar" method="GET" id="form-busca">
+                <input class="form-control me-2" type="search" name="busca" placeholder="Busca de tópicos" aria-label="buscar">
                 <button class="btn text-white bg-englishViolet" type="submit">Buscar</button>
             </form>
         </div>

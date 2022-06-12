@@ -27,6 +27,7 @@ class TopicoController extends Controller
             return abort(500, "Oops! Tente mais tarde.");
         }
     }
+    
     public function criar(TopicoPostRequest $resquest)
     {
         try {
