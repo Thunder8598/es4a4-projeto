@@ -13,7 +13,7 @@ class RecuperarComentariosTest extends TestCase
      */
     public function testRecuperarComentarios()
     {
-        $response = $this->get("/comentarios?page=1");
+        $response = $this->get("/comentarios?page=1&permalink=ola-mundo");
         $response->assertStatus(200);
     }
 }
