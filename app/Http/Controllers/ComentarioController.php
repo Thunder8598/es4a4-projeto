@@ -32,14 +32,16 @@ class ComentarioController extends Controller
         }
     }
 
-    public function recuperar(Request $resquest)
+    public function recuperar(Request $request)
     {
-        $pagina = (int) $resquest->get("page");
+        $pagina = (int) $request->get("page");
+        $permalink = $request->get("permalink");
 
         $pagina = $pagina <= 0 ? 1 : $pagina;
 
         try {
-            $response = Comentario::listarTopicos($pagina);
+            $topico = Topico::topicoPorPermalink($permalink);
+            $response = Comentario::listarTopicos($pagina, $topico);
 
             if (!count($response->getCollection())) {
                 return response()->json([

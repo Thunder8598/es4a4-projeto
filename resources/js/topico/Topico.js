@@ -4,7 +4,7 @@ import Fetch from "./../helpers/Fetch";
 
 class Topico {
     constructor() {
-        this.next_page_url = `${location.origin}/comentarios`;
+        this.next_page_url = `${location.origin}/comentarios?permalink=${decodeURI(location.pathname).replace("/comente-sobre/", "")}`;
         this.btnCarregar = $("#btn-carregar-comentarios");
         this.listaComentarios = $("#listagem-comentarios");
 
@@ -65,6 +65,8 @@ class Topico {
 
         } catch (error) {
             console.log(error);
+
+            this.btnCarregar.hide();
         }
     }
 

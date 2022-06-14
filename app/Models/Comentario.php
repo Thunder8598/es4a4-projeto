@@ -12,9 +12,11 @@ class Comentario extends Model
         "topico"
     ];
 
-    public static function listarTopicos(int $pagina = 1)
+    public static function listarTopicos(int $pagina = 1, Topico $topico)
     {
-        return parent::orderBy("id", "desc")->offset($pagina > 0 ? ($pagina * 10) : 10)
+        return parent::where("topico", "=", $topico->id)
+            ->orderBy("id", "desc")
+            ->offset($pagina > 0 ? ($pagina * 10) : 10)
             ->simplePaginate(10);
     }
 }
