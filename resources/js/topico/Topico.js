@@ -66,6 +66,16 @@ class Topico {
         } catch (error) {
             console.log(error);
 
+            switch (error.status) {
+                case 404:
+                    this.listaComentarios.append(`
+                        <li class="list-group-item bg-white">
+                            <p style="text-align:center">Seja o primeiro a comentar</p>
+                        </li>
+                    `);
+                    break;
+            }
+
             this.btnCarregar.hide();
         }
     }

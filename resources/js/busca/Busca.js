@@ -29,6 +29,16 @@ class Busca {
 
         } catch (error) {
             console.log(error);
+
+            switch (error.status) {
+                case 404:
+                    listaTopicos.append(`
+                        <li class="list-group-item bg-white">
+                            <p style="text-align:center">Nenhum tópico encontrado.</p>
+                        </li>
+                    `);
+                    break;
+            }
         }
     }
 
