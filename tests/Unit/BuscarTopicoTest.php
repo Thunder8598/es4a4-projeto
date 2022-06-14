@@ -13,7 +13,7 @@ class BuscarTopicoTest extends TestCase
      */
     public function testBuscaTopico()
     {
-        $response = $this->get("/topicos?busca=teste");
+        $response = $this->get("/buscar?busca=olá+mundo");
         $response->assertStatus(200);
     }
 }

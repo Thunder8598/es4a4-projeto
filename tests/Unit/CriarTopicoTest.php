@@ -16,6 +16,6 @@ class CriarTopicoTest extends TestCase
     {
 
         $response = $this->post("/topicos", ["topico" => "Teste de tópico"]);
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 }

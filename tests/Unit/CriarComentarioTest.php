@@ -13,7 +13,7 @@ class CriarComentarioTest extends TestCase
      */
     public function testCriarComentario()
     {
-        $response = $this->post("/comentario", ["comentario" => "Teste de comentario", "email" => "teste@teste.com.br", "id-topico" => 1]);
+        $response = $this->post("/comentarios", ["comentario" => "Teste de comentario", "email" => "teste@teste.com.br","permalink"=>"ola-mundo"]);
         $response->assertStatus(200);
     }
 }
